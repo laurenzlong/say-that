@@ -1,0 +1,105 @@
+<!--
+ * Copyright 2017 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Say That</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/stylesheets/material.indigo-red.min.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/stylesheets/custom.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+
+<body class='projector'>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <!-- START HEADER -->
+    <header class="mdl-layout__header mdl-layout__header--seamed">
+      <div class="mdl-layout__header-row">
+        <div class="mdl-layout-spacer"></div>
+        <div class='logo_header'></div>
+        <div class="mdl-layout-spacer"></div>
+      </div>
+    </header>
+    <!-- END HEADER -->
+
+    <main class="mdl-layout__content">
+      <!-- MAIN CONTENT -->
+      <div class="page-content mdl-grid">
+        <div id='scene-wrapper' class="mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet">
+          <div id="scene-selector-container">
+            <select name="scene-selector" id="scene-selector">
+            </select>
+            <input type="button" name="submit" value="Submit" id="scene-select-submit"  class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored'/> 
+            <button id="show-dialog" type="button" class="mdl-button">Scene Summary</button>
+          </div>
+          <div id="video-container"></div>
+        </div>
+        <div id='audience-wrapper' class="mdl-cell mdl-cell--4-col-desktop mdl-cell--2-col-tablet">
+
+          <div id='scores-wrapper'>
+            <div class='total-audience-score float-left'>
+              <span id="total-score">0</span>
+              <label>Audience score</label>
+            </div>
+            <div class='total-audience-langs float-left'>
+              <span id="total-langs">0</span>
+              <label>Languages</label>
+            </div>
+            <div class='clearfix'></div>
+          </div>
+
+          <div id="activity-stream"></div>
+        </div>
+      </div> 
+
+      <dialog class="mdl-dialog" id="summary-dialog">
+        <h4 class="mdl-dialog__title">Scene Summary</h4>
+        <div class="mdl-dialog__content">
+          <table id="summary-table" class="mdl-data-table mdl-js-data-table ">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Answer</th>
+                <th>Guesses</th>
+                <th>Languages</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+        <div class="mdl-dialog__actions">
+          <button type="button" class="mdl-button close">Close</button>
+        </div>
+      </dialog>       
+      <!-- END MAIN CONTENT -->
+    </main>
+  </div>
+  <script src="/__/firebase/3.9.0/firebase-app.js"></script>
+  <script src="/__/firebase/3.9.0/firebase-auth.js"></script>
+  <script src="/__/firebase/3.9.0/firebase-storage.js"></script>
+  <script src="/__/firebase/3.9.0/firebase-database.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="/scripts/projector.js"></script>
+</body>
+
+</html>

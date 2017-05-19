@@ -1,0 +1,348 @@
+/**
+ * Copyright 2017 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  line-height: 1.25;
+  margin: 0px;
+  background: #f9f9f9;
+}
+
+header div.mdl-layout__header-row {
+  background:#fff;
+  border-bottom: 1px solid #f0f0f0;
+  color: #000;
+}
+
+div.logo_header {
+  background: url(/images/logo_header.png) no-repeat;
+  background-size: 122px 23px;
+  width: 122px;
+  height: 23px;
+}
+
+a#sign-out {
+  color: #bbb;
+  width: 54px;
+  max-width: 54px;
+  text-align: right;
+}
+a#change-lang {
+  color: #bbb;
+  width: 54px;
+  max-width: 54px;
+  display:inline-block;
+  /* Required for long language names for header*/
+  text-overflow: ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.page-content {
+  margin: 10px auto 0px;
+  max-width: 1200px;
+}
+
+#sign-out {
+  cursor: pointer;
+}
+
+div#activity-stream {
+  margin: 0px 2px 10px 2px;
+  max-height: 400px;
+}
+
+span.chip {
+  font-size: 14px;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 500px;
+  margin-bottom: 8px;
+  margin-right: 7px;
+  background: #E9E9E9;
+}
+span.chip.true {
+  display: inline-block;
+	background-color: #21B2F3;
+  color: #fff;
+  opacity: 1.0;
+}
+
+span.chip.false {
+  display: inline-block;
+	background-color:#EB9696;
+  color: #fff;
+}
+
+div#input-container {
+  text-align: center;
+}
+div#input-container label.helper {
+  color: #888;
+  line-height: 1.5em;
+  font-size: 0.8em;
+  display: block; 
+  margin-top: 14px;
+  text-align: center;
+}
+
+div.clearfix {
+  clear: both;
+}
+
+div#left_pane {
+  min-width: 320px;
+}
+
+div#keyboard_input {
+  max-width: 320px;
+}
+div#keyboard_input div#noun_guess {
+  width: 180px;
+  margin-left: 10px;
+}
+
+div#keyboard_input button {
+  width: 98px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+div.mdl-layout__header-row {
+  padding-left: 20px;
+}
+
+div#firebaseui-container {
+  margin-top: 50px;
+}
+
+div.mdl-textfield#noun_guess {
+  margin-right: 20px;
+}
+
+a#change-lang {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+a#change-lang i.material-icons {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 8px;
+}
+
+div.lang_wrapper {
+  background: #fff;
+  text-align:center;
+  color: #222;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+div.lang_wrapper div#lang-picker-container {
+  padding: 10px 0;
+  height:100vh;
+}
+
+div.lang_wrapper select {
+  border: 1px solid #ddd;
+  padding: 7px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+div#game-container {
+  margin-top: 10px;
+  max-width: 1200px;
+  justify-content: center;
+  text-align: center;
+}
+
+table.header-stats {
+  width: 190px;
+  margin: 10px auto 0px;;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+table.header-stats span.mdl-layout-title {
+  font-size: 14px;
+}
+table.header-stats div.stat {
+  display: inline-block;
+}
+table.header-stats span.title {
+  display: block;
+  font-size: 1.0em;
+  text-align: center;
+  color: #ccc;
+  width: 92px;
+  margin: 4px 8px 0px;
+}
+
+table.header-stats span.score {
+  display: block;
+  font-size: 1.6em;
+  font-weight: 500;
+  text-align: center;
+  color: #444;
+  width: 92px;
+  margin: 0px 8px;
+}
+
+div#personal_stats {
+  min-width: 320px;
+}
+
+div#personal_stats table {
+  width: 100%;
+}
+
+div#personal_stats table.mdl-data-table thead td {
+  background: #f8f8f8;
+  height: 28px;
+}
+
+footer.mic {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  width: 100%;
+}
+
+div#listening-indicator {
+  margin: 0px auto 20px;
+  max-width: 300px;
+  text-align:center;
+}
+
+div#listening-indicator span {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  color: #ccc;
+
+}
+
+i.icon-toggle {
+  font-size: 28px;
+  opacity: 0.2;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+.firebaseui-idp-text {
+  color: #757575;
+}
+
+#scene-selector-container {
+	padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+select#scene-selector {
+  padding: 4px 10px;
+  background: #fff;
+  height: 34px;
+  margin-right: 10px;
+  border: 1px solid #eee;
+  font-size: 16px;
+  width: 200px;
+}
+select:focus {
+    outline: none;
+}
+
+#scores-wrapper {
+  text-align:center;
+  margin: 0px auto 30px;
+  width: 280px;
+}
+
+#scores-wrapper div {
+  width: 40%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+div.float-left {
+  float: left;
+}
+
+div.float-right {
+  float: right;
+}
+
+#scores-wrapper span {
+  text-align: center;
+  font-size: 36px;
+  font-weight: normal;
+  display: block;
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  font-size: 16px;
+  color: #b0b0b0;
+  font-weight: 100;
+}
+
+#summary-dialog {
+  width: 650px;
+}
+
+table#summary-table.mdl-data-table {
+  border: 0px; 
+}
+table#summary-table.mdl-data-table td {
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 0px;
+}
+#summary-table thead tr th {
+  background: #f7f7f7;
+  height: 44px;
+}
+#summary-table td,th {
+  min-width: 200px;
+  font-size: 16px;
+  color: #555;
+}
+#summary-table td.noun {
+  text-align: left;
+}
+@media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 840px) {
+    div#mid-spacer {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .page-content {
+    margin: 10px auto 0px;
+  }
+
+  div#personal_stats {
+    margin: 10px auto 0px;
+  }
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 1.5), 
+only screen and (-o-min-device-pixel-ratio: 3/2), 
+only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (min-devicepixel-ratio: 1.5), 
+only screen and (min-resolution: 1.5dppx) {
+  div.logo_header {
+    background-image: url(/images/logo_header@2x.png);
+  }
+}

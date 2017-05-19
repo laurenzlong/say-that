@@ -1,0 +1,141 @@
+<!--
+ * Copyright 2017 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Say That</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+  <link rel="stylesheet" href="stylesheets/material.indigo-red.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="stylesheets/custom.css" />
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <!-- START HEADER -->
+    <header class="mdl-layout__header mdl-layout__header--seamed">
+      <div class="mdl-layout__header-row">
+        <a class="mdl-navigation__link" id="change-lang"><span id="lang-display"></span></a>
+        <span class='input-toggles' style='display: none;'>
+          <i class="icon-toggle material-icons" id='enable-keyboard'>keyboard</i>
+          <i class="icon-toggle material-icons" id='enable-mic'>mic</i>
+        </span>
+        <div class="mdl-layout-spacer"></div>
+        <div class='logo_header'></div>
+        <div class="mdl-layout-spacer"></div>
+        <a class="mdl-navigation__link" id="sign-out"> <i class="material-icons">exit_to_app</i></a>
+      </div>
+    </header>
+    <!-- END HEADER -->
+    <main class="mdl-layout__content">
+      <!-- MAIN CONTENT -->
+      <div class="page-content">
+        <!-- START USER SIGNED IN CONTAINER -->
+        <div id="user-signed-in">
+          <div class='lang_wrapper'>
+            <div id="lang-picker-container" class="ui-widget" style="display: none;">
+              <label for="lang-picker">Choose another language </label>
+              <select name="lang-picker" id="lang-picker"></select>
+              <button id="submit-lang" class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored'>Submit</button>
+            </div>
+          </div>
+          <table cellpadding='0' cellspacing='0' border='0' class='header-stats'>
+            <tr>
+              <td><span class='score' id="scene_score">0</span></td>
+              <td><span class='score' id="audience_score">0</span></td>
+            </tr>
+            <tr>
+              <td><span class='title'>My Score</span></td>
+              <td><span class='title'>Audience</span></td>
+            </tr>
+          </table>
+
+          <!-- START GRID -->
+          <div id="game-container" class='mdl-grid'>
+            <div id='left_pane' class="mdl-cell mdl-cell--8-col">
+              <div id='activity-stream'></div>
+              <div class='clearfix'></div>
+            </div>
+          </div>
+          <!-- END GRID -->
+
+          <footer class="mic" style='display: none;'>
+            <div id='input-container'>
+              <div id='mic-container'>
+
+                <div id="listening-indicator" style='display: none;'>
+                  <span>Listening...</span>
+                  <div class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+                </div>
+
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id='start'>
+                  <i class="material-icons">mic</i>
+                </button>
+                <label class='helper'><strong>Hold down button</strong> to speak and submit</label>
+              </div>
+
+              <div id='keyboard_input' class='mdl-grid' style='display:none;'>
+                <div class='keyboard_inner' class='mdl-cell'>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id='noun_guess'>
+                    <input class="mdl-textfield__input" type="text" id="noun" />
+                    <label class="mdl-textfield__label">Type a noun...</label>
+                  </div>
+
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="guess-btn">submit</button>
+                </div>
+              </div>
+
+              <span id="nomic" style="margin-top:10px;display:none;">Your browser doesn't support audio capture.</span>
+            </div>            
+          </footer>          
+        </div>
+        <!-- END GAME CONTAINER -->
+      </div>
+      <!-- END USER SIGNED IN CONTAINER -->
+
+
+      <div id="user-signed-out">
+        <div id="firebaseui-container"></div>
+      </div>
+      <!-- START TOAST -->
+      <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+      </div>
+      <!-- END TOAST -->
+
+      <!-- END MAIN CONTENT -->
+      </main>
+    </div>
+
+    <script src="/__/firebase/3.9.0/firebase-app.js"></script>
+    <script src="/__/firebase/3.9.0/firebase-auth.js"></script>
+    <script src="/__/firebase/3.9.0/firebase-storage.js"></script>
+    <script src="/__/firebase/3.9.0/firebase-database.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="third_party/recorder.js"></script>
+    <script src="third_party/jquery.voice.min.js"></script>
+    <script src="third_party/material.min.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
