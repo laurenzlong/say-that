@@ -85,8 +85,8 @@ var populateSummary = function() {
         var langCount = nounSummary.num_langs || 0;
         var nounScore = nounSummary.score || 0;
         $row = $('<tr><td class=noun>' + noun + '</td><td>' +
-          langCount +'</td><td>' +
-          nounScore + '</td></tr>');
+          nounScore +'</td><td>' +
+          langCount + '</td></tr>');
         $('table#summary-table tbody').append($row);
       }
     }
