@@ -1,4 +1,3 @@
-This is not an official Google product.
 # Collaborative Crowd Game #
  
 [SayThat](https://saythat.io) is a game where players watch a video together on a big screen (such as a projector), and speak or type to their phones in their language of choice what they see on the screen. Players score points when they correctly guess a word that the Cloud Video Intelligence API produced when analyzing the video. 
