@@ -48,7 +48,8 @@ export async function analyzeSpeech(url, filename) {
   // Detect speech in the audio file using the Cloud Speech API.
   const request = {
     encoding: 'LINEAR16',
-    languageCode: languageCode
+    languageCode: languageCode,
+    profanityFilter: true,
   };
   const results = await speech.recognize(url, request);
   let transcription = results[0];
