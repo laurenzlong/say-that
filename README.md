@@ -105,6 +105,8 @@ We must allow the Cloud Speech API to read objects uploaded to Cloud Storage for
   * Name: "allUsers"
   * Access: "Reader"
 * Click "Save".
+
+The database security rules are currently configured to only allow users with an email address that ends in "@google.com" to access administrative parts of the database. You can change this behavior by modifying **database.rules.json**, and replacing every instance of `/.*@google.com$/` with `your_email@domain.com` or `/.*@your_domain.com$/`. You can learn more about Firebase database rules [here](https://firebase.google.com/docs/database/security/).
  
 We're now ready to deploy our code, by running:
 ```
