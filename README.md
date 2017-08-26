@@ -1,6 +1,8 @@
 # Collaborative Crowd Game #
  
-[SayThat](https://saythat.io) is a game where players watch a video together on a big screen (such as a projector), and speak or type to their phones in their language of choice what they see on the screen. Players score points when they correctly guess a word that the Cloud Video Intelligence API produced when analyzing the video. 
+[SayThat](https://saythat.io) is a game where players watch a video together on a big screen (such as a projector), and speak or type to their phones in their language of choice what they see on the screen. Players score points when they correctly guess a word that the Cloud Video Intelligence API produced when analyzing the video.
+
+The game was first created for a talk at Google I/O 2017 titled **Supercharging Firebase Apps with Machine Learning and Cloud Function**. You can watch the video [here](https://www.youtube.com/watch?v=RdqV_N0sCpM).
  
 This game highlights how [Cloud Functions for Firebase](https://firebase.google.com/docs/functions/) can be used to easily add Machine Learning to an app. The code in this repository demonstrates uses of:
  
