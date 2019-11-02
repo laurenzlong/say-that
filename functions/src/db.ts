@@ -27,7 +27,7 @@ export function set(path: string, value: any): Promise<void> {
   return admin.database().ref(path).set(value)
 }
 
-export function push(path: string, value: any): Promise<any> {
+export function push(path: string, value: any): Promise<void> {
   return admin.database().ref(path).push(value);
 }
 
