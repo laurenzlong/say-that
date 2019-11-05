@@ -1,8 +1,12 @@
 import * as _ from 'lodash';
 import * as mock from 'mock-require';
 
-let _values;
-let pushCount;
+interface ValuesProps {
+  [key: string]: string;
+}
+
+let _values: ValuesProps;
+let pushCount: number;
 reset();
 
 export function reset() {
@@ -14,7 +18,7 @@ export function has(path: string): boolean {
   return _values.hasOwnProperty(path);
 }
 
-export function get(path: string): Promise<string> {
+export function get(path: string): Promise<string | null> {
   if (!_values.hasOwnProperty(path)) {
     return Promise.resolve(null);
   }
@@ -26,7 +30,7 @@ export function set(path: string, value: any): Promise<void> {
   return Promise.resolve();
 }
 
-export function push(path: string, value: any): Promise<any> {
+export function push(path: string, value: any): Promise<void> {
   _values[`${path}/pushprefix-${pushCount}`] = value;
   pushCount++;
   return Promise.resolve();
@@ -37,7 +41,10 @@ export function remove(path: string): Promise<void> {
   return Promise.resolve();
 }
 
-export async function transaction(path: string, callback): Promise<any> {
+export async function transaction(
+  path: string,
+  callback: (get: string | null) => Promise<void>
+): Promise<any> {
   return set(path, callback(await get(path)));
 }
 
